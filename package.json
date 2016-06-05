@@ -1,0 +1,25 @@
+{
+  "name": "folderise",
+  "version": "1.0.0",
+  "description": "Generates a static website from a Dropbox (or any other) folder. Uses Express as server.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "middleware",
+    "static",
+    "website",
+    "generator",
+    "dropbox"
+  ],
+  "author": "Benjamin Forster",
+  "license": "ISC",
+  "dependencies": {
+    "chokidar": "^1.5.1",
+    "marked": "^0.3.5",
+    "mmmagic": "^0.4.4",
+    "q": "^1.4.1"
+  }
+}

@@ -75,6 +75,7 @@ function Folderise (options) {
 					var plugins_found = [];
 					iter_over_plugins(html, (plugin) => {
 						if(plugin in plugins) {
+							console.log(plugin ,plugins[plugin].execute());
 							plugins_found.push(plugins[plugin].execute());
 						} else {
 							plugins_found.push(Q(`${plugin} is not installed`));
@@ -84,7 +85,7 @@ function Folderise (options) {
 				})
 				.spread( (html, plugins) => {
 					var i = 0;
-					res.send(html.replace(/\{\{@(\w+)}}/g, () => plugins[i++]));
+					res.send(html.replace(/\{\{@([\w-]+)}}/g, () => plugins[i++]));
 				}).catch(err=> res.send(err));
 			// var stream = 	fs.createReadStream(fullpath, {encoding:'utf8'})
 			// .on('error', err => {
@@ -101,7 +102,7 @@ function Folderise (options) {
 
 		function iter_over_plugins(html,fn) {
 			var tmp = html;
-			var regex = /\{\{@(\w+)}}/g;
+			var regex = /\{\{@([\w-]+)}}/g;
 			var match = regex.exec(tmp);
 			var n = 0;
 			while (match !== null) {

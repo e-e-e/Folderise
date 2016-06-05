@@ -1,6 +1,6 @@
 {
   "name": "folderise",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generates a static website from a Dropbox (or any other) folder. Uses Express as server.",
   "main": "index.js",
   "scripts": {
